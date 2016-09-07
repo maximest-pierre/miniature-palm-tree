@@ -1,0 +1,19 @@
+language: python
+
+python:
+  - 3.5
+
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+  - pip install pep8
+
+before_script:
+  - mv django/miniature_palm_tree/miniature_palm_tree/settings_test.py django/miniature_palm_tree/miniature_palm_tree/settings.py
+
+script:
+  - coverage run --omit=*.virtualenvs*,*virtualenv* django/miniature_palm_tree/manage.py test
+  - pep8 --count --show-source --exclude=migrations django/miniature_palm_tree
+
+after_success:
+  - coveralls
