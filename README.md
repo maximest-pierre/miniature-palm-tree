@@ -1,7 +1,8 @@
 # miniature-palm-tree
 Inventory management system
 
-
+## Build Status
+[![Build Status](https://travis-ci.org/maximest-pierre/miniature-palm-tree.svg?branch=master)](https://travis-ci.org/maximest-pierre/miniature-palm-tree)
 
 
 ## Story
