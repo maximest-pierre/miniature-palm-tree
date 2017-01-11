@@ -2,6 +2,7 @@ from django.test import TestCase
 from inventory.models import Item, ItemGroup
 from datetime import date
 
+
 class ItemTest(TestCase):
 
     @classmethod
