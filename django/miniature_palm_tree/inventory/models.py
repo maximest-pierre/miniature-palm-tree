@@ -12,3 +12,5 @@ class Item (models.Model):
     name = models.CharField(max_length=150)
     creation_date = models.DateField()
     arrival_date = models.DateField()
+
+    # TODO add foreign keys to ItemGroup

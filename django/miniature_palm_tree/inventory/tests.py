@@ -9,6 +9,9 @@ class ItemTest(TestCase):
         item = Item.objects.create(
             name="123", creation_date=date.today, arrival_date=date.today
         )
+        item2 = Item.objects.create(
+            name="abc", creation_date=date.today, arrival_date=date.today
+        )
 
     def testName(self):
         item = Item.objects.get(name="123")
@@ -21,3 +24,8 @@ class ItemTest(TestCase):
     def testArrivalDate(self):
         item = Item.objects.get(name="123")
         self.assertEqual(item.arrival_date, date.today)
+
+    def testNotSameName(self):
+        item = Item.objects.get(name="123")
+        item2 = Item.objects.get("abc")
+        self.assertNotEqual(item.name, item2.name)
